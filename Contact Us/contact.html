@@ -16,7 +16,6 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <!-- Logo with Image -->
       <a class="navbar-brand" href="../index.html">
         <img src="../home/logggggo.jpg" alt="">
       </a>
@@ -29,13 +28,9 @@
           <li class="nav-item">
             <a class="nav-link active" href="../index.html">Home</a>
           </li>
-
-          <!-- Dropdown for Zones -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Zones
-            </a>
+              aria-expanded="false"> Zones </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="../Zones/north.html">North Zone</a></li>
               <li><a class="dropdown-item" href="../Zones/east.html">East Zone</a></li>
@@ -43,7 +38,6 @@
               <li><a class="dropdown-item" href="../Zones/west.html">West Zone</a></li>
             </ul>
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href="../seven wonders/wonder.html">World Wonders</a>
           </li>
@@ -60,54 +54,39 @@
       </div>
     </div>
   </nav>
-  <!-- Contact Form Section -->
+
   <div class="container my-5">
     <h2 class="text-center">Contact Us</h2>
     <p class="text-center">Get in Touch – We’re Always Here to Assist You!</p>
 
-    <!-- Contact Form -->
     <form id="contact-form">
-      <!-- Name -->
       <div class="mb-3">
         <label for="name" class="form-label">Full Name</label>
         <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
-        <div class="invalid-feedback">
-          Please enter your name.
-        </div>
+        <div class="invalid-feedback">Please enter your name (alphabets only).</div>
       </div>
 
-      <!-- Email -->
       <div class="mb-3">
         <label for="email" class="form-label">Email Address</label>
         <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-        <div class="invalid-feedback">
-          Please enter a valid email address.
-        </div>
+        <div class="invalid-feedback">Please enter a valid email address.</div>
       </div>
 
-      <!-- Phone -->
       <div class="mb-3">
         <label for="phone" class="form-label">Phone Number</label>
         <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
-        <div class="invalid-feedback">
-          Please enter a valid phone number.
-        </div>
+        <div class="invalid-feedback">Please enter a valid phone number (digits only).</div>
       </div>
 
-      <!-- Message -->
       <div class="mb-3">
         <label for="message" class="form-label">Your Message</label>
         <textarea class="form-control" id="message" rows="4" placeholder="Write your message here" required></textarea>
-        <div class="invalid-feedback">
-          Please write a message.
-        </div>
+        <div class="invalid-feedback">Please write a message.</div>
       </div>
 
-      <!-- Submit Button -->
       <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
   </div>
-
 
   <footer class="contact-footer bg-dark text-white py-4">
     <div class="container">
@@ -188,7 +167,39 @@
     <p class="mb-0">&copy; 2025 Monuments Gallery | All Rights Reserved</p>
   </div>
 
-  <script src="contact.js"></script>
-</body>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
 
+      // Validation for Name (only alphabets)
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      const namePattern = /^[A-Za-z\s]+$/;
+      const phonePattern = /^[0-9]{10}$/;
+
+      if (!namePattern.test(name)) {
+        alert('Please enter a valid name (only alphabets allowed)');
+        return;
+      }
+
+      if (!phonePattern.test(phone)) {
+        alert('Please enter a valid phone number (only digits, 10 characters)');
+        return;
+      }
+
+      if (!email || !message) {
+        alert('Please fill out all fields correctly');
+        return;
+      }
+
+      // If all validations pass
+      alert('Your message has been sent successfully!');
+      window.location.href = '../index.html'; // Redirect to homepage after submission
+    });
+  </script>
+
+</body>
 </html>

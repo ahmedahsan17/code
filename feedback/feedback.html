@@ -66,129 +66,167 @@
     </div>
   </nav>
 
-
   <!-- Container for the feedback form -->
-<div class="container my-5">
-  <h2 class="text-center">Feedback Form</h2>
-  <p>
-  Feel free to reach out with any questions or for an estimate using the form below.</p>
+  <div class="container my-5">
+    <h2 class="text-center">Feedback Form</h2>
+    <p>Feel free to reach out with any questions or for an estimate using the form below.</p>
 
-  <!-- Feedback Form -->
-  <form id="feedbackForm">
-    <!-- Name -->
-    <div class="mb-3">
-      <label for="name" class="form-label">Full Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
-    </div>
-
-    <!-- Email -->
-    <div class="mb-3">
-      <label for="email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-    </div>
-
-    <!-- Rating -->
-    <div class="mb-3">
-      <label for="rating" class="form-label">Rating</label>
-      <select class="form-select" id="rating">
-        <option value="1">1 - Very Poor</option>
-        <option value="2">2 - Poor</option>
-        <option value="3">3 - Average</option>
-        <option value="4">4 - Good</option>
-        <option value="5">5 - Excellent</option>
-      </select>
-    </div>
-
-    <!-- Feedback Message -->
-    <div class="mb-3">
-      <label for="feedbackMessage" class="form-label">Your Feedback</label>
-      <textarea class="form-control" id="feedbackMessage" rows="4" placeholder="Write your feedback here" required></textarea>
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" class="submit">Submit Feedback</button>
-  </form>
-</div>
-<script src="feedback.js"></script>
-<footer class="footer bg-dark text-white py-4"> 
-  <div class="container">
-    <div class="row">
-      <!-- Quick Links Section -->
-      <div class="col-md-3">
-        <h5 class="mb-3">Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="../index.html" class="text-white">Home</a></li>
-          <li><a href="../seven wonders/wonder.html" class="text-white">World Wonders</a></li>
-          <li><a href="../gallery/gallery.html" class="text-white">Gallery</a></li>
-          <li><a href="../feedback/feedback.html" class="text-white">Feedback</a></li>
-        </ul>
+    <!-- Feedback Form -->
+    <form id="feedbackForm" onsubmit="return validateForm(event)">
+      <!-- Name -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
       </div>
 
-      <!-- Zones Section with Heading -->
-      <div class="col-md-3">
-        <h5 class="mb-3">Explore by Zones</h5>
-        <ul class="list-unstyled">
-          <li><a href="../Zones/north.html" class="text-white">North Zone</a></li>
-          <li><a href="../Zones/east.html" class="text-white">East Zone</a></li>
-          <li><a href="../Zones/south.html" class="text-white">South Zone</a></li>
-          <li><a href="../Zones/west.html" class="text-white">West Zone</a></li>
-        </ul>
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
       </div>
 
-      <!-- Social Media Section -->
-      <div class="col-md-3">
-        <h5 class="mb-3">Follow Us</h5>
-        <div class="social-icons">
-          <div class="row">
-            <div class="col-6 text-center">
-              <a href="https://www.facebook.com/" target="_blank" class="btn btn-social btn-facebook mx-2">
-                <i class="fab fa-facebook-f"></i>
-              </a>
+      <!-- Phone -->
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" id="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <!-- Rating -->
+      <div class="mb-3">
+        <label for="rating" class="form-label">Rating</label>
+        <select class="form-select" id="rating">
+          <option value="1">1 - Very Poor</option>
+          <option value="2">2 - Poor</option>
+          <option value="3">3 - Average</option>
+          <option value="4">4 - Good</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+      </div>
+
+      <!-- Feedback Message -->
+      <div class="mb-3">
+        <label for="feedbackMessage" class="form-label">Your Feedback</label>
+        <textarea class="form-control" id="feedbackMessage" rows="4" placeholder="Write your feedback here"
+          required></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+  <footer class="footer bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <!-- Quick Links Section -->
+        <div class="col-md-3">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="../index.html" class="text-white">Home</a></li>
+            <li><a href="../seven wonders/wonder.html" class="text-white">World Wonders</a></li>
+            <li><a href="../gallery/gallery.html" class="text-white">Gallery</a></li>
+            <li><a href="../feedback/feedback.html" class="text-white">Feedback</a></li>
+          </ul>
+        </div>
+
+        <!-- Zones Section with Heading -->
+        <div class="col-md-3">
+          <h5 class="mb-3">Explore by Zones</h5>
+          <ul class="list-unstyled">
+            <li><a href="../Zones/north.html" class="text-white">North Zone</a></li>
+            <li><a href="../Zones/east.html" class="text-white">East Zone</a></li>
+            <li><a href="../Zones/south.html" class="text-white">South Zone</a></li>
+            <li><a href="../Zones/west.html" class="text-white">West Zone</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="col-md-3">
+          <h5 class="mb-3">Follow Us</h5>
+          <div class="social-icons">
+            <div class="row">
+              <div class="col-6 text-center">
+                <a href="https://www.facebook.com/" target="_blank" class="btn btn-social btn-facebook mx-2">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+              <div class="col-6 text-center">
+                <a href="https://x.com/?lang=en" target="_blank" class="btn btn-social btn-twitter mx-2">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
             </div>
-            <div class="col-6 text-center">
-              <a href="https://x.com/?lang=en" target="_blank" class="btn btn-social btn-twitter mx-2">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 text-center mt-2">
-              <a href="https://www.instagram.com/" target="_blank" class="btn btn-social btn-instagram mx-2">
-                <i class="fab fa-instagram"></i>
-              </a>
+            <div class="row">
+              <div class="col-12 text-center mt-2">
+                <a href="https://www.instagram.com/" target="_blank" class="btn btn-social btn-instagram mx-2">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Contact Us Section -->
-      <div class="col-md-3">
-        <h5>Contact Us</h5>
-        <ul class="list-unstyled">
-          <li class="d-flex align-items-center mb-3">
-            <i class="fas fa-phone-alt mr-2"></i>
-            <a href="tel:+1234567890" class="text-white">+1 (234) 567-890</a>
-          </li>
-          <li class="d-flex align-items-center mb-3">
-            <i class="fas fa-envelope mr-2"></i>
-            <a href="https://workspace.google.com/gmail/" class="text-white">contact@monumentsgallery.com</a>
-          </li>
-          <li class="d-flex align-items-center mb-3">
-            <i class="fas fa-map-marker-alt mr-2"></i>
-            <a href="https://www.google.com/maps" class="text-white" target="_blank">Aptech Learning N. Nazimabad</a>
-          </li>
-        </ul>
+        <!-- Contact Us Section -->
+        <div class="col-md-3">
+          <h5>Contact Us</h5>
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-phone-alt mr-2"></i>
+              <a href="tel:+1234567890" class="text-white">+1 (234) 567-890</a>
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-envelope mr-2"></i>
+              <a href="https://workspace.google.com/gmail/" class="text-white">contact@monumentsgallery.com</a>
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-map-marker-alt mr-2"></i>
+              <a href="https://www.google.com/maps" class="text-white" target="_blank">Aptech Learning N. Nazimabad</a>
+            </li>
+          </ul>
+        </div>
       </div>
+      <div class="footerborder"></div>
     </div>
-    <div class="footerborder"></div>
+  </footer>
+
+  <!-- Copyright Section -->
+  <div class="Copyright text-center bg-dark">
+    <p class="mb-0">&copy; 2025 Monuments Gallery | All Rights Reserved</p>
   </div>
-</footer>
 
-<!-- Copyright Section -->
-<div class="Copyright text-center bg-dark">
-  <p class="mb-0">&copy; 2025 Monuments Gallery | All Rights Reserved</p>
-</div>
+  <script>
+    // JavaScript Validation for Name, Email, and Phone
+    function validateForm(event) {
+      event.preventDefault(); // Prevent form submission
 
+      // Name Validation
+      var name = document.getElementById("name").value;
+      if (name === "") {
+        alert("Please enter your full name.");
+        return false;
+      }
+
+      // Email Validation
+      var email = document.getElementById("email").value;
+      var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      // Phone Validation
+      var phone = document.getElementById("phone").value;
+      var phonePattern = /^[0-9]{10}$/;
+      if (!phonePattern.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return false;
+      }
+
+      // If all validations pass
+      alert('Your message has been sent successfully!');
+      window.location.href = '../index.html'; // Redirect to homepage after submission
+    };
+  </script>
 </body>
 
 </html>
